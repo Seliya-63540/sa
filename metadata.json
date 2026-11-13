@@ -1,0 +1,6 @@
+{
+  "name": "SAFAR CYCLE - Cycle Shop & Workshop",
+  "description": "Bilingual (Gujarati & English) cycle sales, repair booking, status tracking, and workshop management platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "SAFAR CYCLE - Cycle Shop & Workshop",
+  "short_name": "SAFAR CYCLE",
+  "description": "Cycle sales, repairs, and service booking at SAFAR CYCLE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#166534",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192' fill='%23166534'><rect width='192' height='192' rx='36' fill='%23166534'/><path d='M60 130a24 24 0 1 0 0-48 24 24 0 0 0 0 48zm72 0a24 24 0 1 0 0-48 24 24 0 0 0 0 48zm-36-32l16-36h20M96 98l-20-40H52m36 28h32' stroke='white' stroke-width='10' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23166534'><rect width='512' height='512' rx='96' fill='%23166534'/><path d='M160 350a64 64 0 1 0 0-128 64 64 0 0 0 0 128zm192 0a64 64 0 1 0 0-128 64 64 0 0 0 0 128zm-96-85l42-95h54M256 265l-54-106H140m96 74h84' stroke='white' stroke-width='24' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

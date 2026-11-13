@@ -1,0 +1,3296 @@
+# SAFAR CYCLE
+## Complete Frontend Development Master Prompt
+### Cycle Shop | Cycle Sales | Repair | Service Booking | Customer & Admin Management
+
+---
+
+# 1. ROLE AND PROJECT OVERVIEW
+
+Act as a senior frontend developer, React.js architect, professional UI/UX designer and responsive web application designer.
+
+Your task is to design and develop a complete frontend for a local cycle business named:
+
+**SAFAR CYCLE**
+
+SAFAR CYCLE is a local cycle shop and workshop based in Gujarat, India.
+
+The business provides:
+
+1. New cycles for sale.
+2. Cycle-related product information.
+3. Customer purchase enquiries.
+4. Cycle repair services.
+5. Regular cycle servicing.
+6. Service appointment booking.
+7. Repair status tracking.
+8. Customer service history.
+9. Business and workshop management through an admin dashboard.
+
+This is NOT only a repair booking website.
+
+It is a complete customer-facing cycle shopping and workshop management platform.
+
+The frontend must be designed primarily for Android mobile users, while also providing an excellent desktop and tablet experience.
+
+The target audience is mainly Gujarati-speaking local customers.
+
+Therefore:
+- Support Gujarati and English.
+- Use simple and understandable words.
+- Avoid complicated English in customer-facing content.
+- Keep forms short and easy.
+- Use large buttons and readable text.
+- Make navigation simple.
+- Avoid unnecessary options.
+- Make the website feel like a professionally designed local business application.
+
+The final frontend should look like a real business website, not a college project template or a generic admin dashboard.
+
+---
+
+# 2. IMPORTANT DEVELOPMENT SCOPE
+
+This project is FRONTEND ONLY.
+
+Do not create or implement:
+- Node.js backend.
+- Express server.
+- SQLite database.
+- Database schema.
+- Backend authentication logic.
+- Backend API routes.
+- Database migrations.
+- Server-side notification jobs.
+- Backend business logic.
+
+However, structure the frontend so that it can connect to the backend later without redesigning the application.
+
+Use:
+- React API service files.
+- Centralized API configuration.
+- Reusable data-fetching hooks.
+- Authentication context.
+- Protected route components.
+- Structured request and response handling.
+- Mock data adapters only when the actual backend is unavailable.
+
+IMPORTANT:
+
+Do not mix mock data directly into React page components.
+
+Keep mock services separate from real API services so they can be replaced later.
+
+All buttons, links, tabs, filters, forms and interactions must perform their expected frontend actions.
+
+Do not create decorative buttons that do nothing.
+
+If an action requires a backend that is not connected yet, provide a clearly separated mock implementation and document that it must be replaced when the backend becomes available.
+
+---
+
+# 3. FIXED TECHNOLOGY STACK
+
+Use the following frontend technologies.
+
+## Core
+
+- React.js
+- Vite
+- JavaScript
+- JSX
+- HTML5
+- CSS3
+
+## Styling
+
+- Tailwind CSS
+- Custom CSS where necessary
+- CSS variables for design tokens
+
+## Routing
+
+- React Router DOM
+
+## Icons
+
+- Lucide React
+
+## Data Management
+
+- TanStack Query for server-state fetching and caching.
+- React Context for authentication and language preferences.
+- Local component state for temporary UI interactions.
+
+## Forms and Validation
+
+- React Hook Form.
+- Zod for schema validation.
+
+## Language
+
+- i18next.
+- react-i18next.
+
+## Other Requirements
+
+- Progressive Web App support.
+- Responsive image handling.
+- Lazy-loaded routes.
+- Reusable component architecture.
+
+Do not introduce unnecessary libraries.
+
+Do not use TypeScript for this project. Use JavaScript and JSX consistently.
+
+---
+
+# 4. BRAND IDENTITY — SAFAR CYCLE
+
+The complete website must use the brand name:
+
+**SAFAR CYCLE**
+
+The brand should communicate:
+- Trust.
+- Reliability.
+- Good customer service.
+- Cycle-related experience.
+- Local business identity.
+- Simple and accessible service.
+
+## 4.1 Branding
+
+Create a professional wordmark using the text SAFAR CYCLE.
+
+Suggested logo direction:
+- A simple bicycle wheel or bicycle-related symbol.
+- Clean typography.
+- Recognizable at small mobile screen sizes.
+- Suitable for header, footer, favicon and PWA icon.
+
+Do not use a complicated logo.
+
+The logo should look good in:
+- Desktop navbar.
+- Mobile navbar.
+- Login page.
+- Admin sidebar.
+- Footer.
+- Loading screen.
+- PWA icon.
+
+Create a reusable brand component so the logo can later be replaced with the original business logo.
+
+## 4.2 Visual Design Direction
+
+Use a clean, fresh and modern cycle-business theme.
+
+Suggested visual palette:
+
+- Primary: Deep green.
+- Secondary: Fresh green.
+- Background: White or soft off-white.
+- Surface: Very light grey.
+- Main text: Dark charcoal.
+- Secondary text: Muted grey.
+- Success: Green.
+- Warning: Amber.
+- Danger: Red.
+- Information: Blue.
+
+Use these as initial design suggestions, not hardcoded limitations.
+
+Create centralized colour variables.
+
+Avoid:
+- Excessive gradients.
+- Completely black backgrounds.
+- Overly colourful cards.
+- Unnecessary glassmorphism.
+- Excessive shadows.
+- Heavy animations.
+- Complicated layouts.
+- Excessive 3D effects.
+
+The design should feel premium but simple.
+
+---
+
+# 5. BUSINESS INFORMATION PLACEHOLDERS
+
+All real business information will be added after frontend completion.
+
+Do not invent an actual address, phone number, location, business email or opening time.
+
+Create ONE centralized business configuration file.
+
+Example location:
+
+src/config/business.js
+
+Add replaceable values:
+
+BUSINESS_NAME = "SAFAR CYCLE"
+
+BUSINESS_TAGLINE = "[ADD_BUSINESS_TAGLINE]"
+
+BUSINESS_DESCRIPTION = "[ADD_BUSINESS_DESCRIPTION]"
+
+BUSINESS_LOGO = "[ADD_LOGO_PATH]"
+
+SHOP_ADDRESS = "[ADD_SHOP_ADDRESS]"
+
+CITY = "[ADD_CITY]"
+
+DISTRICT = "[ADD_DISTRICT]"
+
+STATE = "Gujarat"
+
+PINCODE = "[ADD_PINCODE]"
+
+CONTACT_NUMBER = "[ADD_CONTACT_NUMBER]"
+
+WHATSAPP_NUMBER = "[ADD_WHATSAPP_NUMBER]"
+
+BUSINESS_EMAIL = "[ADD_EMAIL]"
+
+OPENING_TIME = "[ADD_OPENING_TIME]"
+
+CLOSING_TIME = "[ADD_CLOSING_TIME]"
+
+OPENING_DAYS = "[ADD_OPENING_DAYS]"
+
+GOOGLE_MAPS_URL = "[ADD_GOOGLE_MAPS_LINK]"
+
+INSTAGRAM_URL = "[ADD_INSTAGRAM_LINK]"
+
+FACEBOOK_URL = "[ADD_FACEBOOK_LINK]"
+
+YOUTUBE_URL = "[ADD_YOUTUBE_LINK]"
+
+PRIVACY_POLICY_URL = "[ADD_PRIVACY_POLICY_URL]"
+
+TERMS_URL = "[ADD_TERMS_URL]"
+
+Configure all public business details through this central configuration.
+
+Do not repeat phone numbers, addresses or business descriptions manually across multiple components.
+
+When the business details are updated in this configuration, all website sections should automatically display the updated information.
+
+Where information is unavailable, display a sensible placeholder or hide the unavailable element.
+
+Never show fake phone numbers, fake reviews, fake business experience or fake customer counts.
+
+---
+
+# 6. RESPONSIVE DESIGN STRATEGY
+
+Mobile-first design is a strict requirement.
+
+Prioritize Android smartphones.
+
+Suggested layout testing widths:
+
+- 320px.
+- 360px.
+- 375px.
+- 390px.
+- 412px.
+- 430px.
+- 768px.
+- 1024px.
+- 1280px.
+- 1440px and above.
+
+The website must not break on common Android devices.
+
+## Mobile Requirements
+
+- Single-column layouts where suitable.
+- Large touch targets.
+- Easy-to-read text.
+- Properly sized images.
+- Short forms.
+- Sticky actions only when useful.
+- Bottom navigation for important customer pages.
+- Mobile-friendly date and time inputs.
+- No unnecessary horizontal scrolling.
+- Proper Gujarati font rendering.
+- Responsive tables converted into cards when necessary.
+
+## Tablet Requirements
+
+- Two-column layouts where useful.
+- Proper sidebar behaviour.
+- Balanced content width.
+- Responsive product grids.
+
+## Desktop Requirements
+
+- Full navbar.
+- Multi-column product layouts.
+- Admin sidebar.
+- Dashboard cards.
+- Properly spaced tables.
+- Controlled content width.
+- Professional dashboard layout.
+
+Never simply shrink the desktop layout to fit mobile.
+
+Design the mobile layout independently where needed.
+
+---
+
+# 7. COMPLETE APPLICATION ROUTING
+
+Organize all application routes properly.
+
+## Public Routes
+
+/
+- Homepage.
+
+/cycles
+- Cycle catalogue.
+
+/cycles/:id
+- Cycle details.
+
+/services
+- Service catalogue.
+
+/about
+- About SAFAR CYCLE.
+
+/contact
+- Contact and location.
+
+/login
+- Customer login.
+
+/register
+- Customer registration.
+
+/forgot-password
+- Password recovery interface.
+
+/privacy-policy
+- Privacy policy.
+
+/terms
+- Terms and conditions.
+
+/admin/login
+- Separate admin login.
+
+## Customer Protected Routes
+
+/my-account
+- Customer dashboard.
+
+/my-bookings
+- All service bookings.
+
+/my-bookings/:id
+- Individual booking details.
+
+/book-service
+- Service booking form.
+
+/my-cycles
+- Customer's registered cycles.
+
+/my-enquiries
+- Purchase enquiries.
+
+/my-purchases
+- Purchase history.
+
+/notifications
+- Customer notifications.
+
+/profile
+- Customer profile settings.
+
+## Admin Protected Routes
+
+/admin
+- Admin dashboard.
+
+/admin/cycles
+- Cycle management.
+
+/admin/cycles/add
+- Add cycle.
+
+/admin/cycles/:id/edit
+- Edit cycle.
+
+/admin/enquiries
+- Purchase enquiries.
+
+/admin/bookings
+- Booking management.
+
+/admin/bookings/:id
+- Booking details.
+
+/admin/repairs
+- Repair management.
+
+/admin/repairs/:id
+- Repair details.
+
+/admin/sales
+- Sales management.
+
+/admin/sales/new
+- Record a new sale.
+
+/admin/payments
+- Payment records.
+
+/admin/inventory
+- Inventory management.
+
+/admin/customers
+- Customer management.
+
+/admin/customers/:id
+- Customer details.
+
+/admin/reports
+- Business reports.
+
+/admin/notifications
+- Admin notifications.
+
+/admin/sessions
+- Active and recent login sessions.
+
+/admin/settings
+- Business settings.
+
+/admin/audit-logs
+- Business activity history.
+
+Create a centralized route configuration.
+
+Do not place every route inside one giant component.
+
+Use protected layout components for customer and admin routes.
+
+---
+
+# 8. NAVBAR AND GLOBAL NAVIGATION
+
+## 8.1 Desktop Navbar
+
+Create a premium but simple navbar.
+
+Left side:
+- SAFAR CYCLE logo.
+- Brand name.
+
+Center:
+- Home.
+- Buy Cycles.
+- Services.
+- About.
+- Contact.
+
+Right side:
+- Language switch.
+- Login button or account menu.
+
+Use clear active-route styling.
+
+The navbar should remain visually consistent across public pages.
+
+## 8.2 Mobile Navbar
+
+Mobile header:
+
+- SAFAR CYCLE logo.
+- Language switch.
+- Profile or login icon.
+- Hamburger menu.
+
+The hamburger menu must open a clean mobile drawer.
+
+Include:
+- Home.
+- Buy Cycles.
+- Services.
+- About.
+- Contact.
+- Login or My Account.
+- Language selection.
+
+Do not overcrowd the mobile header.
+
+## 8.3 Logged-In Customer Navigation
+
+After customer login, show:
+- Home.
+- Cycles.
+- Services.
+- My Bookings.
+- Account.
+
+For mobile, provide an optional bottom navigation with four or five main options:
+
+1. Home.
+2. Cycles.
+3. Book Service.
+4. My Bookings.
+5. Account.
+
+Use icons and simple labels.
+
+Highlight the selected item.
+
+## 8.4 Admin Navigation
+
+Admin must have a completely separate layout.
+
+Desktop:
+- Fixed or collapsible sidebar.
+- Main content area.
+- Top header.
+- Profile menu.
+- Notification icon.
+- Page title and breadcrumbs.
+
+Mobile:
+- Compact admin header.
+- Drawer sidebar.
+- Profile menu.
+- Responsive content.
+- Card-based data views where tables do not fit.
+
+Never show customer navigation inside the admin dashboard.
+
+Never show admin navigation to ordinary customers.
+
+---
+
+# 9. PUBLIC HOME PAGE
+
+Route: /
+
+The home page is the most important customer-facing page.
+
+It should immediately communicate that SAFAR CYCLE sells cycles and provides repair and service.
+
+Build these sections in this order.
+
+## 9.1 Hero Section
+
+Create a modern hero section.
+
+Include:
+
+- SAFAR CYCLE identity.
+- Main heading.
+- Short description.
+- Main CTA: Explore Cycles.
+- Secondary CTA: Book a Service.
+- Cycle-related hero image.
+- Optional small trust/detail points.
+
+Suggested English heading:
+
+"Your Cycle, Our Care."
+
+Suggested description:
+
+"Explore new cycles, repair your old cycle and book easy servicing at SAFAR CYCLE."
+
+Suggested Gujarati heading:
+
+"તમારી સાઇકલ, અમારી સંભાળ."
+
+Gujarati description:
+
+"નવી સાઇકલ ખરીદો, જૂની સાઇકલ રિપેર કરાવો અને સરળતાથી સર્વિસ બુક કરો."
+
+Use simple language.
+
+The hero section should fit properly on Android.
+
+Avoid oversized headings that push all main actions below the first screen.
+
+## 9.2 Main Business Services
+
+Create three primary service cards.
+
+Card 1: Buy a Cycle.
+
+- Cycle image or icon.
+- Short description.
+- Explore Cycles button.
+
+Card 2: Cycle Repair.
+
+- Repair-related image or icon.
+- Short description.
+- Request Repair button.
+
+Card 3: Cycle Service.
+
+- Service-related image or icon.
+- Short description.
+- Book Service button.
+
+Use equal visual hierarchy.
+
+## 9.3 Featured Cycles
+
+Show selected cycle listings fetched from the API.
+
+Each card must contain:
+
+- Product image.
+- Product name.
+- Brand.
+- Type.
+- Price.
+- Availability.
+- View Details action.
+
+Include a View All Cycles action.
+
+Use skeleton loading while products are loading.
+
+## 9.4 How It Works
+
+Create a simple process section.
+
+Step 1:
+Choose your cycle or service.
+
+Step 2:
+Send an enquiry or book an appointment.
+
+Step 3:
+Visit the shop.
+
+Step 4:
+Complete your purchase or collect your serviced cycle.
+
+Use visual step indicators.
+
+## 9.5 Why Choose SAFAR CYCLE?
+
+Create up to four editable feature cards.
+
+Example:
+- Cycle Sales.
+- Repair Support.
+- Easy Service Booking.
+- Local Customer Support.
+
+Do not invent claims like "20 years of experience" or "10,000 happy customers."
+
+## 9.6 Popular Services
+
+Display selected active service types.
+
+Each card:
+- Service image or icon.
+- Service title.
+- Short description.
+- Book Service button.
+
+## 9.7 Customer Reviews
+
+Display genuine customer reviews only when available from the backend.
+
+If the backend has no reviews, hide this section or show a neutral review invitation.
+
+Do not display fabricated names, ratings or testimonials.
+
+## 9.8 Contact Banner
+
+Include:
+- Shop name.
+- Contact number.
+- WhatsApp action.
+- Get Directions action.
+
+Read data from the centralized business configuration.
+
+## 9.9 Footer
+
+Footer sections:
+
+Column 1:
+- SAFAR CYCLE logo.
+- Business description.
+
+Column 2:
+- Home.
+- Buy Cycles.
+- Services.
+- About.
+- Contact.
+
+Column 3:
+- Book Service.
+- My Bookings.
+- Login.
+- My Account.
+
+Column 4:
+- Contact number.
+- WhatsApp number.
+- Business address.
+- Opening hours.
+
+Bottom:
+- Copyright.
+- Privacy Policy.
+- Terms and Conditions.
+- Social media links.
+
+Hide unavailable contact links instead of showing broken links.
+
+---
+
+# 10. CYCLE CATALOGUE PAGE
+
+Route: /cycles
+
+Create a proper cycle shopping interface.
+
+## 10.1 Page Header
+
+- Heading: Explore Our Cycles.
+- Gujarati equivalent.
+- Short description.
+- Search input.
+- Product count.
+
+## 10.2 Search and Filters
+
+Add:
+- Search by cycle name.
+- Search by brand.
+- Category filter.
+- Cycle type filter.
+- Price range.
+- Availability filter.
+- Sort by price low to high.
+- Sort by price high to low.
+- Newest first.
+
+Filters should work together.
+
+Include:
+- Clear filters.
+- Active filter indicators.
+- Mobile filter drawer or bottom sheet.
+
+Do not overload the mobile page with large filter panels.
+
+## 10.3 Product Grid
+
+Desktop:
+- Three or four columns depending on available width.
+
+Tablet:
+- Two or three columns.
+
+Mobile:
+- One or two columns based on screen width and card readability.
+
+Product card content:
+
+- Main image.
+- Product name.
+- Brand.
+- Type.
+- Price in INR.
+- Availability badge.
+- View Details button.
+
+Use consistent image ratios.
+
+Images must not become stretched.
+
+## 10.4 Loading and Empty States
+
+Create:
+
+- Product skeleton cards.
+- No products found state.
+- Search empty state.
+- API failure state.
+- Retry action.
+
+If no cycles are available, show an understandable message in Gujarati and English.
+
+---
+
+# 11. CYCLE DETAIL PAGE
+
+Route: /cycles/:id
+
+This page should help customers understand the cycle and contact the business.
+
+## 11.1 Product Gallery
+
+Include:
+
+- Main product image.
+- Multiple thumbnails.
+- Previous and next buttons.
+- Full-screen image viewer.
+- Mobile swipe support where practical.
+- Loading placeholder.
+- Image fallback.
+
+Use properly optimized images.
+
+## 11.2 Product Information
+
+Display:
+
+- Cycle name.
+- Brand.
+- Model.
+- Category.
+- Type.
+- Condition: New or Used.
+- Price.
+- Availability.
+- Description.
+- Wheel size.
+- Frame size.
+- Gear information.
+- Available colours.
+- Other available specifications.
+
+Hide optional specifications that the admin has not entered.
+
+Do not invent missing specifications.
+
+## 11.3 Customer Actions
+
+Primary action:
+
+Ask About This Cycle.
+
+Secondary action:
+
+Contact on WhatsApp.
+
+Enquiry form:
+- Customer name.
+- Phone number.
+- Selected cycle.
+- Message.
+- Submit button.
+
+For logged-in customers:
+- Prefill available profile details.
+
+For logged-out customers:
+- Allow a simple enquiry with the minimum necessary details, or require login according to the configured product-enquiry policy.
+
+The enquiry must never appear as a confirmed purchase.
+
+Do not show online checkout.
+
+Do not show Pay Now.
+
+Do not reduce stock after an enquiry.
+
+## 11.4 Related Products
+
+Show a few related cycles if available.
+
+Use the same product card component as the catalogue page.
+
+---
+
+# 12. SERVICES PAGE
+
+Route: /services
+
+Create a clean page explaining the workshop services offered by SAFAR CYCLE.
+
+## 12.1 Hero
+
+Heading:
+
+"Cycle Repair & Service"
+
+Gujarati:
+
+"સાઇકલ રિપેર અને સર્વિસ"
+
+Description explaining that customers can book servicing or request repairs.
+
+CTA:
+Book a Service.
+
+## 12.2 Service Cards
+
+Service examples:
+
+- General Cycle Service.
+- Brake Repair.
+- Gear Adjustment.
+- Tyre / Tube Replacement.
+- Chain Repair.
+- Wheel Alignment.
+- Full Cycle Repair.
+- Other Repairs.
+
+Each card should support:
+
+- Service name in Gujarati and English.
+- Short description.
+- Estimated duration when available.
+- Starting price when entered by admin.
+- Book Service button.
+
+Do not assume all services have fixed prices.
+
+If price is inspection-based, display:
+
+"Price after inspection."
+
+## 12.3 Booking Process
+
+Explain the basic steps.
+
+1. Select your cycle.
+2. Select the service.
+3. Choose a date and time.
+4. Submit booking request.
+5. Visit the workshop.
+
+## 12.4 Contact and Booking CTA
+
+Include:
+- Book Service.
+- WhatsApp contact.
+- Phone contact.
+
+---
+
+# 13. ABOUT PAGE
+
+Route: /about
+
+Create an editable business introduction page.
+
+Sections:
+
+1. About SAFAR CYCLE.
+2. What We Offer.
+3. Cycle Sales.
+4. Cycle Repair.
+5. Customer Service.
+6. Why Customers Can Contact Us.
+7. Contact CTA.
+
+Use placeholder business-description content.
+
+Mark all editable text in a central content configuration.
+
+Never invent the business's history or achievements.
+
+---
+
+# 14. CONTACT PAGE
+
+Route: /contact
+
+Include:
+
+## Contact Details
+
+- Business name.
+- Phone.
+- WhatsApp.
+- Address.
+- Opening hours.
+- Email if available.
+
+## Map Section
+
+Provide a Google Maps link using the configured business URL.
+
+Do not hardcode a random location.
+
+If the Maps URL is unavailable, show an address placeholder or hide the map section.
+
+## Contact Form
+
+Fields:
+
+- Name.
+- Phone.
+- Subject.
+- Message.
+
+Add validation and understandable error messages.
+
+Show:
+- Loading state.
+- Success state.
+- Error state.
+
+Do not show a fake successful submission when there is no connected API or mock service.
+
+---
+
+# 15. CUSTOMER AUTHENTICATION PAGES
+
+Only TWO roles exist:
+
+1. CUSTOMER.
+2. ADMIN.
+
+Do not build worker authentication or worker dashboards.
+
+## 15.1 Customer Login
+
+Route: /login
+
+Design:
+
+- SAFAR CYCLE logo.
+- Welcome heading.
+- Mobile number field.
+- Password field.
+- Show/hide password.
+- Remember-me option only if supported by the session design.
+- Login button.
+- Forgot password link.
+- Register link.
+- Language switch.
+
+Gujarati example:
+
+"SAFAR CYCLE માં આપનું સ્વાગત છે."
+
+The login form must provide:
+- Empty field errors.
+- Invalid phone errors.
+- Invalid password errors.
+- Loading state.
+- Login failure state.
+- Successful navigation.
+
+Do not save passwords or session tokens in localStorage.
+
+## 15.2 Customer Registration
+
+Route: /register
+
+Fields:
+- Full name.
+- Mobile number.
+- Password.
+- Confirm password.
+- Preferred language.
+- Terms acceptance.
+
+Validation:
+- Required fields.
+- Valid phone format.
+- Password requirements.
+- Matching passwords.
+- Accepted terms.
+
+The interface must be comfortable on Android.
+
+Use a simple form, not a lengthy multi-step registration process.
+
+## 15.3 Admin Login
+
+Route: /admin/login
+
+Create a completely separate login experience.
+
+Display:
+- SAFAR CYCLE brand.
+- Admin Login heading.
+- Username or configured admin identifier.
+- Password.
+- Show/hide password.
+- Secure login action.
+- Error message.
+
+Do not add public admin registration.
+
+Do not display a public button that allows users to create administrator accounts.
+
+After successful admin authentication, navigate to /admin.
+
+## 15.4 Forgot Password
+
+Route: /forgot-password
+
+Create a frontend flow that can connect to a future password recovery API.
+
+Provide:
+- Phone number or supported account identifier.
+- Submit action.
+- Verification step only when backend/provider support exists.
+- Reset password form when valid reset state is available.
+
+Do not simulate real OTP delivery.
+
+Clearly separate mock behaviour from real verification.
+
+---
+
+# 16. CUSTOMER DASHBOARD
+
+Route: /my-account
+
+Create a customer dashboard with simple cards and clear information.
+
+## 16.1 Dashboard Welcome
+
+Show:
+- Welcome message.
+- Customer first name.
+- Account avatar or initial.
+- Notification shortcut.
+
+## 16.2 Summary Cards
+
+Display actual API data:
+
+- Total Bookings.
+- Upcoming Bookings.
+- Active Repairs.
+- Completed Services.
+- Open Enquiries.
+
+Use small, clean cards.
+
+On mobile, display cards in a readable single or two-column layout.
+
+## 16.3 Upcoming Booking
+
+Show:
+- Booking number.
+- Cycle name.
+- Service name.
+- Date and time.
+- Current status.
+- View Details action.
+
+## 16.4 Recent Activity
+
+Show a short list of recent:
+- Booking updates.
+- Repair updates.
+- Purchase enquiry updates.
+- Notifications.
+
+## 16.5 Quick Actions
+
+Provide:
+- Book Service.
+- Explore Cycles.
+- My Bookings.
+- My Cycles.
+
+Do not put all customer history on the dashboard.
+
+Use individual pages for detailed records.
+
+---
+
+# 17. MY BOOKINGS PAGE
+
+Route: /my-bookings
+
+This page is a major customer feature.
+
+Display all bookings owned by the currently authenticated customer.
+
+Filters:
+
+- All.
+- Requested.
+- Confirmed.
+- Upcoming.
+- In Progress.
+- Completed.
+- Cancelled.
+- No Show.
+
+Each booking card must show:
+
+- Booking reference.
+- Cycle name.
+- Service.
+- Appointment date.
+- Appointment time.
+- Status.
+- View Details.
+
+On mobile use cards, not wide data tables.
+
+Add pagination or Load More.
+
+Do not download unlimited booking history in one request.
+
+Create empty states for each filter.
+
+---
+
+# 18. BOOKING DETAIL PAGE
+
+Route: /my-bookings/:id
+
+Display:
+
+## Booking Information
+
+- Booking number.
+- Customer's cycle.
+- Service type.
+- Problem description.
+- Appointment date.
+- Appointment time.
+- Current status.
+
+## Status Timeline
+
+Show a visual timeline:
+
+REQUESTED
+
+↓
+
+CONFIRMED
+
+↓
+
+CHECKED_IN
+
+↓
+
+IN_PROGRESS
+
+↓
+
+COMPLETED
+
+Display the customer's actual status history.
+
+Do not display future steps as completed.
+
+Cancelled and rejected bookings should have clear alternative ending states.
+
+NO_SHOW should have a separate status presentation.
+
+## Workshop Updates
+
+Show customer-visible repair information.
+
+Hide internal admin notes.
+
+## Payment Summary
+
+Show:
+- Estimated cost.
+- Final cost.
+- Amount paid.
+- Remaining amount.
+- Payment status.
+
+Display that payment is handled directly at the shop.
+
+Do not show online payment buttons.
+
+## Customer Actions
+
+Where supported:
+- Cancel booking.
+- Contact shop.
+- Book Again.
+
+Never offer cancellation when the booking is already completed or otherwise not eligible for cancellation.
+
+---
+
+# 19. CUSTOMER CYCLE MANAGEMENT
+
+Route: /my-cycles
+
+Customers may own multiple cycles.
+
+Create a simple interface.
+
+Display cycle cards with:
+- Cycle nickname.
+- Brand.
+- Model.
+- Type.
+- Colour.
+- Wheel size.
+- Edit.
+- Archive.
+
+Add New Cycle action.
+
+## Cycle Registration Form
+
+Fields:
+- Cycle nickname.
+- Brand.
+- Model.
+- Cycle type.
+- Colour.
+- Wheel size.
+- Frame or serial number (optional).
+
+Keep the form simple.
+
+Validate all submitted fields.
+
+Only display cycles belonging to the currently logged-in customer.
+
+An archived cycle must remain available for historical booking references where needed.
+
+---
+
+# 20. CUSTOMER PURCHASE ENQUIRIES
+
+Route: /my-enquiries
+
+Show every cycle enquiry submitted by the customer.
+
+Each card must include:
+
+- Enquiry number.
+- Product image.
+- Cycle name.
+- Enquiry date.
+- Current status.
+- Admin response or customer-visible note if available.
+
+Statuses:
+
+- NEW.
+- CONTACTED.
+- CONVERTED.
+- CLOSED.
+- CANCELLED.
+
+Do not represent enquiries as completed sales.
+
+Provide a Contact Shop action.
+
+---
+
+# 21. CUSTOMER PURCHASE HISTORY
+
+Route: /my-purchases
+
+Show actual completed purchase records associated with the customer.
+
+Display:
+
+- Sale reference.
+- Cycle name.
+- Product image where available.
+- Purchase date.
+- Quantity.
+- Final selling price.
+- Payment summary.
+- Receipt or invoice view when supported.
+
+Do not display payment credentials or private admin information.
+
+Walk-in sales that are not linked to the customer must not appear in this customer's history.
+
+---
+
+# 22. CUSTOMER NOTIFICATIONS
+
+Route: /notifications
+
+Create a clean notification centre.
+
+Notification types:
+
+- Booking received.
+- Booking confirmed.
+- Booking rejected.
+- Booking cancelled.
+- Appointment reminder.
+- Cycle checked in.
+- Repair started.
+- Repair completed.
+- Purchase enquiry update.
+- Business information.
+
+Each notification must show:
+
+- Title.
+- Message.
+- Date and time.
+- Read / Unread indicator.
+- Related booking or enquiry action where applicable.
+
+Features:
+
+- Mark as read.
+- Mark all as read.
+- Unread count.
+- Empty state.
+
+Notification messages must appear in the customer's selected language.
+
+---
+
+# 23. CUSTOMER PROFILE
+
+Route: /profile
+
+Sections:
+
+## Personal Information
+
+- Name.
+- Phone.
+- Email if available.
+- Preferred language.
+
+## Account Settings
+
+- Update profile.
+- Change password.
+- Logout.
+- View account information.
+
+Never allow the customer to change their role from CUSTOMER to ADMIN.
+
+Do not expose internal session credentials.
+
+---
+
+# 24. COMPLETE ADMIN DASHBOARD
+
+Route: /admin
+
+This is the business owner's main working interface.
+
+Design it for daily operations.
+
+Do not make it look like an unnecessarily complex enterprise dashboard.
+
+The owner should immediately understand:
+- What needs attention.
+- Which bookings are upcoming.
+- Which cycles are being repaired.
+- Which tasks have been completed.
+- What products are available.
+- What enquiries are waiting.
+- How much business has been recorded.
+
+## 24.1 Admin Layout
+
+Desktop:
+- Sidebar.
+- Top navbar.
+- Page title.
+- Breadcrumb.
+- Main content.
+
+Mobile:
+- Small header.
+- Expandable navigation drawer.
+- Responsive cards.
+- Simple filters.
+- Large quick-action buttons.
+
+## 24.2 Admin Sidebar
+
+Include:
+
+OVERVIEW
+- Dashboard.
+
+CYCLE SHOP
+- All Cycles.
+- Add New Cycle.
+- Purchase Enquiries.
+- Sales.
+
+WORKSHOP
+- Service Bookings.
+- Repair Management.
+- Inventory.
+
+CUSTOMERS
+- Customers.
+- Active Sessions.
+
+FINANCE
+- Payments.
+- Reports.
+
+SYSTEM
+- Notifications.
+- Business History.
+- Settings.
+- Logout.
+
+The sidebar should support collapsed desktop mode.
+
+Highlight the active route.
+
+---
+
+# 25. ADMIN DASHBOARD OVERVIEW
+
+Route: /admin
+
+## 25.1 Welcome Header
+
+Show:
+- SAFAR CYCLE.
+- Admin name.
+- Current date.
+- Notifications.
+- Profile menu.
+
+## 25.2 Statistics Cards
+
+Show actual database-derived or API-provided statistics:
+
+- Today's Bookings.
+- Pending Requests.
+- Confirmed Appointments.
+- Ongoing Repairs.
+- Completed Repairs.
+- No-Show Bookings.
+- Available Cycles.
+- New Purchase Enquiries.
+- Today's Recorded Sales.
+- Outstanding Payments.
+
+Do not hardcode statistics.
+
+## 25.3 Today's Workshop Activity
+
+Create a prominent section.
+
+For each booking show:
+- Booking number.
+- Customer name.
+- Cycle name.
+- Service type.
+- Appointment time.
+- Status.
+- Quick action.
+
+## 25.4 Pending Actions
+
+Show items requiring owner attention:
+
+- New service requests.
+- Unconfirmed bookings.
+- New purchase enquiries.
+- Low-stock products.
+- Unresolved payment balances.
+
+## 25.5 Quick Actions
+
+Add large buttons:
+
+- Add New Cycle.
+- Record Sale.
+- View New Bookings.
+- Open Repairs.
+- View Enquiries.
+
+## 25.6 Business Summary
+
+Include:
+- Recorded sales chart.
+- Booking status chart.
+- Popular cycle categories if supported by data.
+
+Use simple charts.
+
+Do not use charts just for decoration.
+
+Display appropriate empty states when there is no data.
+
+---
+
+# 26. ADMIN CYCLE MANAGEMENT
+
+Route: /admin/cycles
+
+Create a proper product management interface.
+
+## Cycle Table / Cards
+
+Display:
+- Product image.
+- Cycle name.
+- Brand.
+- Category.
+- Price.
+- Stock.
+- Listing status.
+- Created date.
+- Edit action.
+- Archive action.
+
+Filters:
+- All.
+- Published.
+- Unpublished.
+- In Stock.
+- Out of Stock.
+- Archived.
+
+Search:
+- Name.
+- SKU.
+- Brand.
+
+Desktop may use a data table.
+
+Mobile must use product cards or compact responsive rows.
+
+## Add Cycle Page
+
+Route: /admin/cycles/add
+
+Create a professional product form.
+
+Sections:
+
+### Basic Information
+
+- Cycle name in English.
+- Cycle name in Gujarati.
+- Brand.
+- Model.
+- SKU.
+- Category.
+- Cycle type.
+
+### Product Condition
+
+- New.
+- Used.
+
+### Price and Stock
+
+- Selling price.
+- Stock quantity.
+- Availability.
+
+### Specifications
+
+- Wheel size.
+- Frame size.
+- Gear information.
+- Colour.
+- Additional specifications.
+
+### Description
+
+- English description.
+- Gujarati description.
+
+### Images
+
+- Upload multiple images.
+- Preview images.
+- Remove selected images.
+- Select main image.
+- Change image order.
+
+### Publishing
+
+- Publish.
+- Save as Draft.
+
+Validate file types and file size on the frontend.
+
+Show upload progress and image previews.
+
+Do not claim that an image has been uploaded until the service confirms success.
+
+## Edit Cycle Page
+
+Route: /admin/cycles/:id/edit
+
+Reuse the Add Cycle form.
+
+Pre-fill the existing product information.
+
+Allow editing without destroying historical sales records.
+
+Provide clear Save Changes and Cancel actions.
+
+---
+
+# 27. ADMIN PURCHASE ENQUIRY MANAGEMENT
+
+Route: /admin/enquiries
+
+Display:
+- Enquiry number.
+- Customer name.
+- Customer contact.
+- Cycle name.
+- Product image.
+- Message.
+- Date.
+- Current status.
+
+Provide filters:
+
+- New.
+- Contacted.
+- Converted.
+- Closed.
+- Cancelled.
+
+Enquiry detail panel:
+
+- Customer information.
+- Interested cycle.
+- Full message.
+- Enquiry date.
+- Status history.
+- Admin notes.
+
+Quick actions:
+- Mark Contacted.
+- Mark Converted.
+- Close Enquiry.
+
+Add contact buttons using configured phone and WhatsApp details.
+
+Do not create a sale automatically when an enquiry becomes converted.
+
+The sale must be recorded separately after the actual purchase.
+
+---
+
+# 28. ADMIN BOOKING MANAGEMENT
+
+Route: /admin/bookings
+
+This is one of the most important admin pages.
+
+Create both:
+
+1. List view.
+2. Calendar view.
+
+## Booking Filters
+
+- Today.
+- Upcoming.
+- Requested.
+- Confirmed.
+- Checked In.
+- In Progress.
+- Completed.
+- Cancelled.
+- No Show.
+
+Additional filters:
+- Date range.
+- Customer.
+- Booking number.
+- Service type.
+
+## Booking Cards / Rows
+
+Display:
+- Booking ID.
+- Customer.
+- Phone.
+- Cycle.
+- Service.
+- Appointment.
+- Status.
+- Quick actions.
+
+## Quick Action Rules
+
+For REQUESTED:
+- Confirm.
+- Reject.
+- View Details.
+
+For CONFIRMED:
+- Mark Cycle Received.
+- Cancel.
+- Mark No Show where appropriate.
+
+For CHECKED_IN:
+- Start Work.
+
+For IN_PROGRESS:
+- Complete & Notify.
+
+For COMPLETED:
+- View Details.
+- View Payment.
+
+For CANCELLED or REJECTED:
+- View History.
+
+## Action Confirmation
+
+Before important actions:
+- Show a confirmation dialog.
+- Explain what will happen.
+- Provide Confirm and Cancel buttons.
+
+For repair completion, the button should read:
+
+Complete & Notify Customer.
+
+Prevent accidental double-click submissions.
+
+Show action loading and success/error feedback.
+
+All available actions must reflect the current API status.
+
+---
+
+# 29. ADMIN BOOKING DETAIL PAGE
+
+Route: /admin/bookings/:id
+
+Show full booking information.
+
+Sections:
+
+### Customer Information
+- Name.
+- Phone.
+- Contact button.
+
+### Cycle Information
+- Registered cycle.
+- Brand.
+- Model.
+- Other available details.
+
+### Appointment Information
+- Booking reference.
+- Service type.
+- Requested date.
+- Confirmed date.
+- Appointment time.
+- Problem description.
+
+### Status History
+Display every available status transition with:
+- Old status.
+- New status.
+- Change date.
+- Change source.
+- Notes.
+
+### Work Information
+- Diagnosis.
+- Work performed.
+- Spare parts used.
+- Estimated cost.
+- Final cost.
+- Internal notes.
+
+### Payment Summary
+- Total cost.
+- Amount paid.
+- Remaining balance.
+- Payment status.
+
+### Actions
+Show only actions allowed for the current status.
+
+Do not show customer-facing internal notes on the customer interface.
+
+---
+
+# 30. ADMIN REPAIR MANAGEMENT
+
+Route: /admin/repairs
+
+Create a workshop-focused interface.
+
+Filters:
+- All Repairs.
+- Waiting.
+- Checked In.
+- In Progress.
+- Completed.
+
+Repair cards:
+
+- Booking number.
+- Customer.
+- Cycle.
+- Service.
+- Work status.
+- Start time.
+- Estimated amount.
+- View Details.
+
+## Repair Detail
+
+Route: /admin/repairs/:id
+
+Fields and sections:
+
+- Initial complaint.
+- Inspection result.
+- Work required.
+- Work performed.
+- Spare parts.
+- Estimated cost.
+- Final cost.
+- Internal notes.
+- Completion information.
+
+Allow editing appropriate repair fields.
+
+Provide Start Work and Complete & Notify actions according to state.
+
+Do not make the owner complete multiple unnecessary forms to finish a repair.
+
+---
+
+# 31. ADMIN SALES MANAGEMENT
+
+Route: /admin/sales
+
+This page manages in-person cycle sales.
+
+IMPORTANT:
+
+There must be NO online checkout or online payment gateway.
+
+Customers buy cycles directly at the physical shop.
+
+## Sales List
+
+Display:
+- Sale number.
+- Customer.
+- Cycle.
+- Date.
+- Quantity.
+- Total.
+- Payment method.
+- Amount received.
+- Remaining balance.
+
+## Record New Sale
+
+Route: /admin/sales/new
+
+Create a clear transaction form.
+
+Sections:
+
+### Customer
+
+- Existing customer selection.
+- Walk-in customer option.
+- Name.
+- Phone.
+
+### Products
+
+- Search cycle.
+- Select cycle.
+- Quantity.
+- Available stock.
+- Selling price.
+- Add item.
+
+### Price Summary
+
+- Subtotal.
+- Discount.
+- Final amount.
+
+### Payment Received
+
+- Amount received.
+- Method: CASH / UPI / OTHER.
+- Payment reference if applicable.
+- Remaining balance.
+
+### Completion
+
+- Review.
+- Save Sale.
+- Confirmation.
+
+This page only records money that the business owner has already received at the shop.
+
+Never integrate an online payment flow.
+
+---
+
+# 32. ADMIN PAYMENT MANAGEMENT
+
+Route: /admin/payments
+
+Show:
+- Payment reference.
+- Customer.
+- Related sale or repair.
+- Total amount.
+- Amount received.
+- Date.
+- Payment method.
+- Recorded by.
+
+Allow admin to record payment against an existing sale or service job.
+
+Support:
+- Cash.
+- UPI received at shop.
+- Other.
+
+Support partial payments.
+
+Show outstanding balance.
+
+Do not allow customers to mark their own payments as received.
+
+Provide clear payment status indicators.
+
+---
+
+# 33. ADMIN INVENTORY MANAGEMENT
+
+Route: /admin/inventory
+
+This page manages spare parts used in repairs.
+
+Display:
+- Part name.
+- SKU.
+- Category.
+- Quantity.
+- Unit.
+- Purchase cost.
+- Stock status.
+- Reorder level.
+
+Features:
+- Add part.
+- Edit part.
+- Adjust stock.
+- View stock movements.
+- Search.
+- Filter.
+- Low-stock indicator.
+
+When parts are used in a repair, the backend should update stock.
+
+The frontend should show confirmed data returned by the backend.
+
+Never silently alter inventory figures in the UI.
+
+---
+
+# 34. ADMIN CUSTOMER MANAGEMENT
+
+Route: /admin/customers
+
+Display:
+
+- Customer name.
+- Phone.
+- Registration date.
+- Total bookings.
+- Completed services.
+- Purchase count.
+- Recent activity.
+
+Provide:
+- Search.
+- Filters.
+- Pagination.
+- Customer detail view.
+
+## Customer Detail
+
+Route: /admin/customers/:id
+
+Sections:
+
+1. Customer profile.
+2. Registered cycles.
+3. Booking history.
+4. Repair history.
+5. Purchase enquiries.
+6. Completed purchases.
+7. Payment records.
+8. Recent activity.
+
+Keep private data limited to what the owner needs to operate the business.
+
+Never display passwords or session secrets.
+
+---
+
+# 35. ACTIVE LOGIN SESSIONS
+
+Route: /admin/sessions
+
+Create a simple session-monitoring interface.
+
+Display:
+- Account name.
+- Account type.
+- Last activity.
+- Login time.
+- Session status.
+- Device information when provided by backend.
+
+Do not expose raw session IDs.
+
+Allow admin to revoke sessions if the API supports that action.
+
+Clearly distinguish active, expired and revoked sessions.
+
+Do not show a false live-online indicator.
+
+---
+
+# 36. ADMIN REPORTS
+
+Route: /admin/reports
+
+Create simple business reports.
+
+Sections:
+
+### Sales Report
+- Daily sales.
+- Monthly sales.
+- Total recorded sales.
+- Payment collection.
+
+### Booking Report
+- Total bookings.
+- Completed bookings.
+- Cancelled bookings.
+- No-show bookings.
+
+### Workshop Report
+- Completed repairs.
+- Current repairs.
+- Popular services.
+
+### Inventory Report
+- Low-stock items.
+- Stock movements.
+
+Filters:
+- Today.
+- Last 7 days.
+- Last 30 days.
+- Custom date range.
+
+Use readable charts and summary cards.
+
+Add export and print actions where APIs support them.
+
+Financial summaries must use data returned by the backend.
+
+---
+
+# 37. ADMIN NOTIFICATIONS
+
+Route: /admin/notifications
+
+Show:
+- New bookings.
+- New enquiries.
+- Booking cancellations.
+- Appointment reminders.
+- Low-stock alerts.
+- Important system notifications.
+
+Include:
+- Read/unread.
+- Mark read.
+- Related page navigation.
+
+Use a notification badge in the admin navbar.
+
+---
+
+# 38. BUSINESS SETTINGS
+
+Route: /admin/settings
+
+Create a structured settings interface.
+
+Sections:
+
+### Business Information
+- Business name.
+- Tagline.
+- Logo.
+- Address.
+- Contact number.
+- WhatsApp number.
+- Email.
+- Business description.
+
+### Opening Hours
+- Opening time.
+- Closing time.
+- Weekly closing days.
+
+### Language
+- Default language.
+- Supported languages.
+
+### Booking Settings
+- Automatic or manual confirmation.
+- Appointment capacity.
+- Appointment duration.
+- No-show grace period.
+- Reminder configuration.
+
+### Notifications
+- In-app notification preferences.
+- WhatsApp integration status.
+- Push notification status.
+
+Show clearly which settings are controlled by the central configuration and which can later be managed through the backend.
+
+Do not expose API secrets or provider credentials in frontend settings.
+
+---
+
+# 39. AUDIT AND BUSINESS HISTORY
+
+Route: /admin/audit-logs
+
+Create a structured history interface.
+
+Show:
+- Date and time.
+- Action.
+- Admin or system actor.
+- Related record.
+- Action description.
+
+Examples:
+- Cycle added.
+- Price updated.
+- Booking confirmed.
+- Booking marked completed.
+- Sale recorded.
+- Payment received.
+- Stock adjusted.
+
+Provide search and date filters.
+
+Display old and new values in a clean detail panel when provided by the API.
+
+Make history read-only in the frontend.
+
+Do not add delete or edit controls for audit history.
+
+---
+
+# 40. BOOKING STATUS DESIGN SYSTEM
+
+Create a reusable StatusBadge component.
+
+Statuses:
+
+REQUESTED
+- Waiting for confirmation.
+
+CONFIRMED
+- Booking confirmed.
+
+CHECKED_IN
+- Cycle received.
+
+IN_PROGRESS
+- Work in progress.
+
+COMPLETED
+- Work completed.
+
+REJECTED
+- Request rejected.
+
+CANCELLED
+- Cancelled.
+
+NO_SHOW
+- Customer did not arrive.
+
+Design distinct colours and icons for each state.
+
+Use the same visual language in:
+- Customer booking cards.
+- Admin booking table.
+- Booking detail.
+- Repair dashboard.
+- Notification messages.
+
+Never represent two different statuses with identical labels.
+
+Create a reusable status timeline component.
+
+---
+
+# 41. GUJARATI AND ENGLISH SYSTEM
+
+Gujarati support is a major requirement.
+
+The entire application must support both:
+
+- ગુજરાતી
+- English
+
+## Language Switch
+
+Add a visible switch in the navbar.
+
+Example:
+
+ગુજરાતી | English
+
+Gujarati should be the default customer-facing language unless the customer has selected another language.
+
+Admin can also switch languages.
+
+## Translation Requirements
+
+Translate every visible UI element:
+
+- Navbar.
+- Hero.
+- Buttons.
+- Inputs.
+- Form labels.
+- Validation errors.
+- Product details.
+- Service details.
+- Login.
+- Registration.
+- Dashboard.
+- Booking statuses.
+- Notifications.
+- Empty states.
+- Admin pages.
+- Footer.
+- Confirmation dialogs.
+- Error messages.
+
+Do not translate only the homepage.
+
+Use separate translation files:
+
+src/i18n/locales/en/translation.json
+
+src/i18n/locales/gu/translation.json
+
+Use translation keys.
+
+Example:
+
+- common.home
+- common.login
+- common.cancel
+- cycles.viewDetails
+- cycles.askAboutCycle
+- booking.confirmed
+- booking.inProgress
+- booking.completed
+- booking.noShow
+- auth.login
+- auth.register
+
+Never hardcode long customer-facing strings directly inside JSX.
+
+Use a Gujarati-capable font.
+
+Suggested font: Noto Sans Gujarati.
+
+Ensure:
+- Proper Gujarati character rendering.
+- Correct line height.
+- No clipped text.
+- No overlapping buttons.
+- Proper font weights.
+- Readability on Android.
+
+Gujarati wording must sound natural to local customers.
+
+Avoid overly formal Gujarati.
+
+---
+
+# 42. REUSABLE COMPONENT SYSTEM
+
+Create reusable components rather than repeating JSX.
+
+## Global Components
+
+- Logo.
+- Navbar.
+- MobileDrawer.
+- Footer.
+- LanguageSwitcher.
+- PageContainer.
+- PageHeader.
+- Breadcrumbs.
+- SectionHeading.
+- LoadingSpinner.
+- SkeletonLoader.
+- EmptyState.
+- ErrorState.
+- ConfirmDialog.
+- ToastNotification.
+- Pagination.
+- SearchInput.
+- FilterDropdown.
+- DatePicker.
+- StatusBadge.
+- ImageUploader.
+- ImageGallery.
+
+## Customer Components
+
+- CycleCard.
+- ServiceCard.
+- BookingCard.
+- BookingTimeline.
+- EnquiryCard.
+- NotificationCard.
+- CustomerProfileCard.
+- CustomerBottomNavigation.
+
+## Admin Components
+
+- AdminSidebar.
+- AdminHeader.
+- DashboardStatCard.
+- BookingTable.
+- BookingMobileCard.
+- CycleManagementTable.
+- CustomerTable.
+- SalesTable.
+- PaymentTable.
+- InventoryTable.
+- RecentActivity.
+- QuickActionCard.
+- ChartCard.
+- AdminBottomNavigation or MobileAdminDrawer.
+
+## Form Components
+
+- TextInput.
+- PhoneInput.
+- PasswordInput.
+- Textarea.
+- SelectInput.
+- CheckboxInput.
+- FileUploadInput.
+- DateInput.
+- TimeSlotSelector.
+- CurrencyInput.
+
+Every component should have clear props and responsibilities.
+
+Do not create oversized components containing unrelated logic.
+
+---
+
+# 43. FRONTEND FOLDER STRUCTURE
+
+Use the following organization.
+
+client/
+  public/
+    images/
+    icons/
+    fonts/
+    manifest.webmanifest
+
+  src/
+    assets/
+
+    components/
+      common/
+      layout/
+      navigation/
+      forms/
+      cards/
+      feedback/
+      charts/
+
+    features/
+      auth/
+      cycles/
+      enquiries/
+      customer-cycles/
+      services/
+      bookings/
+      repairs/
+      sales/
+      payments/
+      inventory/
+      notifications/
+      profile/
+      reports/
+      settings/
+
+    pages/
+      public/
+      auth/
+      customer/
+      admin/
+
+    layouts/
+      PublicLayout.jsx
+      AuthLayout.jsx
+      CustomerLayout.jsx
+      AdminLayout.jsx
+
+    routes/
+      AppRoutes.jsx
+      ProtectedRoute.jsx
+      AdminRoute.jsx
+
+    context/
+      AuthContext.jsx
+      LanguageContext.jsx
+
+    hooks/
+      useAuth.js
+      useLanguage.js
+      useApi.js
+
+    services/
+      api/
+        apiClient.js
+        authApi.js
+        cycleApi.js
+        bookingApi.js
+        enquiryApi.js
+        salesApi.js
+        paymentApi.js
+        notificationApi.js
+        adminApi.js
+
+      mock/
+        mockAuthApi.js
+        mockCycleApi.js
+        mockBookingApi.js
+        mockAdminApi.js
+
+    config/
+      business.js
+      environment.js
+      navigation.js
+
+    i18n/
+      index.js
+      locales/
+
+    utils/
+      currency.js
+      date.js
+      validation.js
+      formatters.js
+
+    styles/
+      globals.css
+      variables.css
+
+    App.jsx
+    main.jsx
+
+  .env.example
+  package.json
+
+Keep the exact folder structure consistent.
+
+Do not create duplicate files with different naming styles for the same responsibility.
+
+---
+
+# 44. API INTEGRATION PREPARATION
+
+Even though this phase is frontend-only, prepare the frontend for the actual backend.
+
+Create a centralized API client.
+
+Base URL must come from:
+
+VITE_API_BASE_URL
+
+Example:
+
+VITE_API_BASE_URL=[BACKEND_API_URL]
+
+Use:
+- Credentials included for session cookies.
+- Standard JSON request handling.
+- Centralized error handling.
+- Consistent loading states.
+- Appropriate HTTP status handling.
+
+Do not place fetch calls randomly inside every page component.
+
+Create separate API service files.
+
+## Expected Future API Integration
+
+Authentication:
+- POST /api/auth/register
+- POST /api/auth/login
+- POST /api/auth/logout
+- GET /api/auth/me
+
+Cycles:
+- GET /api/cycles
+- GET /api/cycles/:id
+
+Bookings:
+- POST /api/bookings
+- GET /api/me/bookings
+- GET /api/me/bookings/:id
+- POST /api/me/bookings/:id/cancel
+
+Admin:
+- GET /api/admin/dashboard
+- GET /api/admin/bookings
+- GET /api/admin/cycles
+- POST /api/admin/cycles
+- PATCH /api/admin/cycles/:id
+
+Enquiries:
+- POST /api/enquiries
+- GET /api/me/enquiries
+- GET /api/admin/enquiries
+
+Sales:
+- GET /api/admin/sales
+- POST /api/admin/sales
+
+Payments:
+- GET /api/admin/payments
+- POST /api/admin/payments
+
+Notifications:
+- GET /api/me/notifications
+- GET /api/admin/notifications
+
+These are integration contracts only.
+
+Do not create or simulate a real backend.
+
+Keep mock data inside the mock service layer.
+
+When a real backend becomes available, switching the API implementation should not require rewriting page components.
+
+---
+
+# 45. AUTHENTICATION UI AND ROUTE PROTECTION
+
+Create frontend route guards.
+
+## Public Route
+
+Accessible without login.
+
+Examples:
+- Home.
+- Cycles.
+- Services.
+- About.
+- Contact.
+- Login.
+- Register.
+
+## Customer Route
+
+Accessible only when the authenticated user has CUSTOMER role.
+
+Examples:
+- My Account.
+- My Bookings.
+- My Cycles.
+- My Enquiries.
+- My Purchases.
+- Notifications.
+- Profile.
+
+## Admin Route
+
+Accessible only when the authenticated user has ADMIN role.
+
+Examples:
+- Admin Dashboard.
+- Cycle Management.
+- Booking Management.
+- Sales.
+- Payments.
+- Reports.
+- Settings.
+
+After login:
+- Customer goes to customer area.
+- Admin goes to admin dashboard.
+
+If a customer attempts to open an admin page:
+- Do not render admin content.
+- Show unauthorized or redirect to an appropriate page.
+
+If an admin opens a customer-only page, handle it according to the route policy.
+
+When the session expires:
+- Clear frontend authentication state.
+- Redirect to the appropriate login page.
+- Show a session-expired message.
+
+IMPORTANT:
+
+Frontend route protection is a user-interface feature, not the security boundary.
+
+The backend must independently verify every protected operation when connected.
+
+Never trust a role value supplied or modified by the browser.
+
+---
+
+# 46. PAYMENT INTERFACE RULES
+
+The business has a strict payment policy.
+
+All payment happens directly at the physical shop.
+
+The frontend must never include:
+
+- Razorpay checkout.
+- Stripe checkout.
+- PayPal.
+- Online card payment.
+- Pay Now.
+- Customer online payment.
+- Payment gateway redirects.
+
+Customer-facing payment screens must only show:
+
+- Estimated amount, if available.
+- Final amount, if entered.
+- Amount paid.
+- Remaining amount.
+- Payment status.
+- Message explaining that payment is made directly at the shop.
+
+Admin screens may record payments already received through:
+
+- Cash.
+- UPI.
+- Other.
+
+Do not implement a payment collection workflow.
+
+Do not display fake payment success messages.
+
+---
+
+# 47. UI INTERACTION REQUIREMENTS
+
+Every major component must have complete interaction states.
+
+For buttons:
+- Default.
+- Hover.
+- Active.
+- Disabled.
+- Loading.
+
+For forms:
+- Empty.
+- Focused.
+- Valid.
+- Invalid.
+- Submitting.
+- Success.
+- Failure.
+
+For cards:
+- Default.
+- Hover where useful.
+- Selected where relevant.
+
+For requests:
+- Loading.
+- Empty.
+- Error.
+- Loaded.
+
+For dialogs:
+- Open.
+- Close.
+- Confirm.
+- Cancel.
+
+For tables:
+- Loading.
+- No data.
+- Error.
+- Populated.
+- Pagination.
+
+Avoid using browser alert() for important UI interactions.
+
+Use a reusable toast and confirmation-dialog system.
+
+---
+
+# 48. IMAGE AND ASSET MANAGEMENT
+
+Use relevant cycle-related images.
+
+Required image categories:
+- New bicycles.
+- Mountain bicycles.
+- Kids' bicycles.
+- Road bicycles.
+- Bicycle repair.
+- Workshop activity.
+- Bicycle accessories.
+
+Image rules:
+- Use consistent aspect ratios.
+- Use object-fit correctly.
+- Avoid stretched images.
+- Create placeholder images.
+- Lazy-load non-critical images.
+- Add descriptive alt text.
+- Provide image fallback behaviour.
+
+Do not use unrelated stock photographs.
+
+For product images, use data returned from the API.
+
+Use realistic sample product images only in the isolated mock-data layer.
+
+Make replacement of all demonstration images straightforward.
+
+---
+
+# 49. PWA AND ANDROID EXPERIENCE
+
+Build the frontend so it can work as an Android-installable PWA.
+
+Include:
+- Web app manifest.
+- Service worker setup.
+- App icons.
+- Theme colour.
+- Installability support.
+- Offline fallback page.
+- Responsive layouts.
+- Optimized asset loading.
+
+Create a simple install-app prompt only when the browser supports installation.
+
+Do not repeatedly annoy users with install prompts.
+
+Do not claim a booking has been submitted successfully while offline.
+
+Do not cache private customer data as public offline data.
+
+The app should remain understandable even when the network is slow or unavailable.
+
+---
+
+# 50. ACCESSIBILITY AND USABILITY
+
+Follow practical accessibility rules.
+
+- Proper semantic HTML.
+- Correct input labels.
+- Visible focus indicators.
+- Keyboard-accessible dialogs.
+- Accessible icon buttons.
+- Sufficient colour contrast.
+- Readable text.
+- Proper form error association.
+- Meaningful image alt attributes.
+- Screen-reader-friendly navigation.
+
+Do not use icons without labels in important mobile actions.
+
+Use readable status labels rather than relying only on colours.
+
+Gujarati and English layouts must both remain accessible.
+
+---
+
+# 51. FRONTEND PERFORMANCE
+
+Optimize the React application.
+
+Implement:
+
+1. Lazy route loading.
+2. Component splitting.
+3. Lazy images.
+4. TanStack Query caching.
+5. Request deduplication where suitable.
+6. Pagination.
+7. Debounced search.
+8. Minimal unnecessary re-renders.
+9. Optimized product images.
+10. Proper empty and loading states.
+
+Avoid:
+- Fetching all bookings at once.
+- Fetching every customer at once.
+- Rendering large unfiltered product lists.
+- Repeated API calls for unchanged data.
+- Keeping all page data in one global context.
+- Storing authentication secrets in browser storage.
+
+Use query invalidation after relevant mutations.
+
+Example:
+When admin updates a booking status, refresh the affected booking data and related dashboard summaries.
+
+---
+
+# 52. MOCK DATA RULES
+
+During frontend development, the backend may not yet exist.
+
+Use sample data through dedicated mock services.
+
+Provide examples for:
+- Cycles.
+- Categories.
+- Services.
+- Customers.
+- Bookings.
+- Enquiries.
+- Payments.
+- Sales.
+- Inventory.
+- Notifications.
+
+Use realistic but clearly fictional demonstration records.
+
+Never put demonstration values directly into production page components.
+
+Provide a development mode switch.
+
+When mock mode is enabled:
+- Display mock data.
+- Allow frontend interaction.
+- Clearly document that data is temporary.
+
+When real API mode is enabled:
+- Use the actual backend.
+- Do not silently fall back to fake success.
+- Display API errors honestly.
+
+---
+
+# 53. FINAL DESIGN QUALITY STANDARD
+
+The application should look and behave like a real local cycle business platform.
+
+It must NOT look like:
+- A basic tutorial project.
+- A generic ecommerce template.
+- A generic dashboard theme.
+- A static collection of cards.
+- A copied school project interface.
+
+It should have its own SAFAR CYCLE identity.
+
+Prioritize:
+- Visual consistency.
+- Navigation clarity.
+- Practical business workflows.
+- Android experience.
+- Gujarati usability.
+- Readable product information.
+- Easy admin operations.
+- Clean forms.
+- Useful status information.
+
+Avoid unnecessary decoration.
+
+Every design element must serve a business or usability purpose.
+
+---
+
+# 54. FINAL DEVELOPMENT PHASES
+
+Build the frontend in the following sequence.
+
+Do not try to create all pages in one uncontrolled code generation.
+
+## PHASE 1 — Setup and Design System
+
+- Initialize Vite and React.
+- Configure Tailwind CSS.
+- Install required libraries.
+- Create business configuration.
+- Create global design tokens.
+- Configure routes.
+- Create logo and branding component.
+- Create reusable UI components.
+
+Deliverable: Complete frontend foundation.
+
+## PHASE 2 — Public Website
+
+- Navbar.
+- Mobile navigation.
+- Footer.
+- Homepage.
+- Cycle catalogue.
+- Cycle detail.
+- Services.
+- About.
+- Contact.
+
+Deliverable: Public customer-facing website.
+
+## PHASE 3 — Authentication UI
+
+- Customer login.
+- Customer registration.
+- Admin login.
+- Forgot password.
+- Route guards.
+- Authentication context.
+
+Deliverable: Two-role authentication interface.
+
+## PHASE 4 — Customer Dashboard
+
+- Customer overview.
+- My bookings.
+- Booking details.
+- Booking timeline.
+- Book service.
+- My cycles.
+- My enquiries.
+- My purchases.
+- Notifications.
+- Profile.
+
+Deliverable: Complete customer frontend.
+
+## PHASE 5 — Admin Dashboard
+
+- Admin layout.
+- Sidebar.
+- Header.
+- Statistics.
+- Today's activity.
+- Pending actions.
+- Quick actions.
+
+Deliverable: Admin management foundation.
+
+## PHASE 6 — Admin Business Modules
+
+- Cycle management.
+- Add and edit cycle.
+- Product images.
+- Purchase enquiries.
+- Booking management.
+- Repair details.
+- Sales.
+- Payments.
+- Inventory.
+- Customers.
+- Reports.
+- Active sessions.
+- Notifications.
+- Audit history.
+- Business settings.
+
+Deliverable: Complete admin frontend.
+
+## PHASE 7 — API Integration Preparation
+
+- Centralized API client.
+- Authentication API services.
+- Product API services.
+- Booking API services.
+- Admin API services.
+- Mock service separation.
+- Loading and error handling.
+
+Deliverable: Backend-ready frontend architecture.
+
+## PHASE 8 — Gujarati and English
+
+- Complete translation files.
+- Language switch.
+- Gujarati font.
+- Translated forms.
+- Translated notifications.
+- Translated booking statuses.
+- Layout testing for both languages.
+
+Deliverable: Complete bilingual frontend.
+
+## PHASE 9 — PWA and Responsive Optimization
+
+- Android layouts.
+- Tablet layouts.
+- Desktop layouts.
+- PWA manifest.
+- Service worker.
+- Install interface.
+- Offline fallback.
+
+Deliverable: Responsive Android-first website.
+
+## PHASE 10 — Final Quality Testing
+
+Test:
+- Every route.
+- Every button.
+- Every link.
+- Every form.
+- Search and filters.
+- Language switching.
+- Mobile navbar.
+- Admin sidebar.
+- Protected routes.
+- Responsive layouts.
+- Loading states.
+- Error states.
+- Empty states.
+- API service separation.
+- PWA installation where supported.
+
+Deliverable: Complete tested frontend, ready for backend integration.
+
+---
+
+# 55. STRICT INSTRUCTIONS FOR THE AI DEVELOPER
+
+Follow these requirements without exception:
+
+1. Use React, Vite and JSX.
+2. Use JavaScript, not TypeScript.
+3. Build the complete frontend only.
+4. Do not build Node.js or Express backend code.
+5. Do not build SQLite or database code.
+6. Use SAFAR CYCLE as the permanent brand name.
+7. Keep all business contact details replaceable.
+8. Do not invent the business location or phone number.
+9. Support Gujarati and English throughout the entire application.
+10. Design mobile-first, particularly for Android.
+11. Create two roles only: CUSTOMER and ADMIN.
+12. Do not create Worker Login.
+13. Do not create online payment interfaces.
+14. Do not create decorative non-functional buttons.
+15. Do not put all pages in one file.
+16. Do not put API requests directly everywhere.
+17. Do not mix mock data with production API logic.
+18. Do not store login credentials or authentication tokens in localStorage.
+19. Do not hardcode statistics.
+20. Do not use fabricated customer reviews.
+21. Do not break the application when information is missing.
+22. Do not skip mobile layouts.
+23. Do not leave Gujarati translations incomplete.
+24. Do not create backend-dependent success messages without a successful response.
+25. Keep the existing project structure organized throughout development.
+
+When developing each phase:
+
+- First explain what you are about to build.
+- Show which files will be created or modified.
+- Write complete working code.
+- Explain important components.
+- Test the resulting functionality.
+- Fix errors before proceeding.
+- Keep documentation updated.
+- Do not overwrite completed work unnecessarily.
+
+Do not merely provide code snippets when the task requires complete files.
+
+Use reusable components and consistent coding conventions.
+
+---
+
+# FINAL EXPECTATION
+
+Build a complete, professional, Android-first frontend for:
+
+**SAFAR CYCLE**
+
+A bilingual cycle shop and workshop platform where customers can:
+
+- Explore cycles.
+- View cycle details.
+- Enquire about buying cycles.
+- Book cycle servicing.
+- Request cycle repairs.
+- Track booking status.
+- View their service history.
+- Manage registered cycles.
+- Receive notifications.
+
+And where the admin can:
+
+- Manage cycles for sale.
+- Upload cycle photographs.
+- Manage product enquiries.
+- Manage service bookings.
+- Track repair work.
+- Complete repairs with one action.
+- Manage in-person sales.
+- Record cash and UPI payments.
+- Manage inventory.
+- View customers.
+- View business activity and reports.
+
+The frontend must be clean, reliable, responsive, simple for Gujarati customers and ready for integration with a properly developed Node.js backend.
+
+**START WITH PHASE 1.**
+
+First inspect the project workspace, initialize the frontend and build the design system. Do not jump directly to the homepage and do not attempt to generate every module in one response.
+
+The goal is a complete, maintainable business frontend, not just an attractive landing page.
